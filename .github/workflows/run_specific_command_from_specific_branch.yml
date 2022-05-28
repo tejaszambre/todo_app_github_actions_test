@@ -1,0 +1,14 @@
+name: Run Specific Command From Specific Branch
+on:
+  workflow_dispatch:
+    inputs:
+      which_command:
+        description: 'run command'
+        required: true
+        type: string
+jobs:
+  Run-Command:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running command - ${{ github.events.inputs.which_command }}"
+      - run: ${{ github.events.inputs.which_command }}
