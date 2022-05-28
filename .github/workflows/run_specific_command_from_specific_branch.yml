@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
     inputs:
       which_command:
-        description: 'run command'
         required: true
         type: string
 jobs:
